@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Tap Tap Bug</title>
+		<meta name="description" content="CSC309 A2">
+		<meta name="author" content="Xiaoyu Yan">
+		<meta name="viewport" content="width=400, height=600">
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script type="text/javascript" src="javascript.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1>Tap Tap Bug</h1>
+		</header>
+
+		<div id="container">
+			<div id="levelGroup">
+				<span>Level:</span>
+				<input type="radio" name="level" value="1" checked/>
+				1
+				<input type="radio" name="level" value="2" />
+				2
+			</div>
+			<div id="startButton">
+				<input type="button" onclick="start()" value="Start"/>
+			</div>
+			<div id="scoreGroup">
+				<span>High Score: </span><span id="scoreRecord">123</span>
+			</div>
+		</div>
+
+		<footer>
+			<div id="copyright">
+				&copy; Copyright  by Xiaoyu Yan
+			</div>
+		</footer>
+		<script>
+			var scoreRecord = document.getElementById("scoreRecord");
+			var radios = document.getElementsByName("level");
+			
+			// Get the highest score record
+			scoreRecord.innerHTML = localStorage.getItem("score");
+			
+			// Check the highest available level
+			if (localStorage.getItem("levelRecord") == null) {
+				localStorage.setItem("levelRecord", radios[0].value);
+			}
+			
+			// Disable haven't reached level
+			for (var i = 0; i < radios.length; i++) {
+				if (radios[i].value > localStorage.getItem("levelRecord"))
+					radios[i].disabled = true;
+			}
+
+			// Start button
+			function start() {
+				for (var i = 0; i < radios.length; i++) {
+					if (radios[i].checked){
+						localStorage.setItem("level", radios[i].value);
+						document.location.href = "game.html";
+					}
+						
+						
+				}
+			}
+		</script>
+	</body>
+</html>

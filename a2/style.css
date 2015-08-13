@@ -1,0 +1,65 @@
+h1 {
+	text-align: center;
+}
+#container{
+	border: 1px solid black;
+	width: 400px;
+	margin: auto;
+	
+}
+
+#levelGroup{
+	width: 120px;
+	margin: 50px auto;
+	
+}
+
+#startButton{
+	width: 50px;
+	margin: auto;
+}
+
+#scoreGroup{
+	width: 120px;
+	margin: 50px auto;
+}
+
+#controlPanel{
+	position: relative;
+	padding-top: 10px;
+	width: 400px;
+	height: 30px;
+	border-bottom: 1px solid black;
+}
+#gameContainer{
+	border: 1px solid black;
+	width: 400px;
+	height: 650px;
+	margin: 10px auto;
+}
+#counter{
+	display: inline-block;
+	width: 100px;
+	margin: auto;
+}
+#state{
+	position: absolute;
+	left: 175px;
+	margin: 10 auto;
+}
+#score{
+	position: absolute;
+	right: 100px;
+}
+#currentLevel{
+	position: absolute;
+	right: 30px;
+}
+#copyright {
+	width: 200px;
+	margin: 30px auto;
+	text-align: center;
+}
+#board{
+	position: relative;
+}
